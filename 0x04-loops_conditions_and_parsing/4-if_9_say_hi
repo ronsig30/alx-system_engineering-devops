@@ -2,13 +2,13 @@
 #displays "Best School" 10 times. On the 9th iteration,
 #displays "Best school" then a new line.
 
-count=0
+count=1
 
-while [ $count -lt 10 ]
+while [ $count -le 10 ]
 do
-	if [ $count -eq 8 ]
+	if [ $count -eq 9 ]
 	then
-		echo -e "Best school\nHi"
+		echo -e  "Best school\nHi"
 	else
 		echo "Best School"
 	fi
