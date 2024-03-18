@@ -1,0 +1,7 @@
+sudo apt update
+sudo apt install ufw
+sudo ufw enable
+sudo ufw default deny incoming
+sudo ufw allow from 52.23.213.131 to any port 22
+sudo ufw allow from 52.23.213.131 to any port 443
+sudo ufw allow from 52.23.213.131 to any port 80
