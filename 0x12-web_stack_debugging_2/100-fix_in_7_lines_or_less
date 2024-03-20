@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
-if [ $# -ne 1 ]
+if ! command -v nginx &> /dev/null
 then
-    echo "Usage: $0 <username>"
-    exit 1
+    apt-get update
+    apt-get install -y nginx
 fi
-sudo -u "$1" whoami
+sed -i 's/user\s*nginx;/user nginx;/g' /etc/nginx/nginx.conf
+sed -i 's/listen\s*80;/listen 8080;/g' /etc/nginx/sites-available/default
+service nginx restart
+
